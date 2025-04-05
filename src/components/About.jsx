@@ -6,7 +6,7 @@ import { Jelly } from "sparkels_ui";
 const About = () => {
     return (
         <div className="relative flex items-center justify-center min-h-screen px-6">
-            <div><Jelly/></div>
+            <div><PlasmaFlow/></div>
             
             <div className="absolute top-28 left-10 flex flex-col items-center text-white text-center max-w-2xl">
                 <h1 className="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">

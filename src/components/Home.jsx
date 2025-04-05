@@ -60,7 +60,9 @@ const Home = () => {
     <div className="mt-12">
         <div className="flex justify-center gap-2">
             <span className="bg-gray-700 text-white px-3 py-1 rounded-md shadow-md">JS</span>
-            <span className="bg-gray-700 text-white px-3 py-1 rounded-md shadow-md">CSS</span>
+            <span className="bg-gray-700 text-white px-3 py-1 rounded-md shadow-md">TAILWIND</span>
+            <span className="bg-gray-700 text-white px-3 py-1 rounded-md shadow-md">FRAMER MOTION</span>
+            
         </div>
 
         <h3 className="text-2xl font-semibold text-white mt-4">Simply copy & paste</h3>

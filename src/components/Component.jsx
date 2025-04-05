@@ -60,7 +60,7 @@ const Component = () => {
         </ul>
       </div>
 
-      <div className="  flex-1 flex flex-col justify-center items-center p-4">
+      <div className="  flex-1 flex flex-col justify-center items-center p-4 ">
         {selectedComponent ? selectedComponent : <BlackholeVortex />}
         {selectedComponent && (
           <div className="mt-6 p-4 rounded-lg w-[90vw] flex flex-col justify-center mr-28 ">
