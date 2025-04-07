@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Stars } from "sparkels_ui";
 const Contact= () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({});
@@ -26,7 +26,9 @@ const Contact= () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black text-white px-4">
+    <div className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center text-white" >
+      <Stars/>
+    <div className="flex justify-center items-center text-white absolute w-full flex-col mb-84 ">
       <div className="w-full max-w-md bg-gray-900 p-6 rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-4">Contact Us</h2>
         
@@ -79,6 +81,7 @@ const Contact= () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
