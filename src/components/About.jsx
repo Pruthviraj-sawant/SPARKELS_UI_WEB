@@ -34,16 +34,16 @@ const About = () => {
             <div className="relative right-0 lg:right-10 flex flex-col items-center space-y-6 mt-10 lg:mt-0 lg:absolute lg:bottom-10">
                 <h2 className="text-3xl font-bold text-purple-500">SPARKELS_UI MAKES YOUR WEB SHINE</h2>
                 <div className="grid grid-cols-1 gap-6">
-                    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-64 text-center">
+                    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-64 text-center border-white border">
                         
                         <h3 className="text-xl font-semibold">Interactive Components</h3>
                         <p className="text-gray-400 mt-2">Beautifully designed UI elements to enhance user experience.</p>
                     </div>
-                    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-64 text-center">
+                    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-64 text-center border-white border">
                         <h3 className="text-xl font-semibold">Customizable Themes</h3>
                         <p className="text-gray-400 mt-2">Easily adapt UI components to match your brand’s style.</p>
                     </div>
-                    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-64 text-center">
+                    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-64 text-center border-white border">
                         <h3 className="text-xl font-semibold">Seamless Integration</h3>
                         <p className="text-gray-400 mt-2">Works effortlessly with React and Tailwind CSS.</p>
                     </div>

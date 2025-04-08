@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { BlackholeVortex, Tornado, AsteroidBelt, RainingEffect, Stars, Meteors,
+import {
+  BlackholeVortex, TornadoCanvs, AsteroidBelt, RainingEffect, Stars, RealisticMeteors,
   Mouselight, HackerBackground, Nebula, SouthPoleScene, PlasmaFlow, Flash,
   ThunderScene, Jelly, Card3D, DualSlideShow, FireEffectInput,
   NeoInput, LightningInput, PopperInput, VibrationInput, SlideShow,
-  SparksInput } from "sparkels_ui";
+  SparksInput
+} from "sparkels_ui";
 import { Menu } from "lucide-react";
 
 const slides = [
@@ -15,9 +17,9 @@ const slides = [
 
 const componentsList = [
   { name: "BlackholeVortex", component: <BlackholeVortex /> },
-  { name: "Tornado", component: <Tornado /> },
+  { name: "Tornado", component: <TornadoCanvs /> },
   { name: "Stars", component: <Stars /> },
-  { name: "Meteors", component: <Meteors /> },
+  { name: "Meteors", component: <RealisticMeteors /> },
   { name: "AsteroidBelt", component: <AsteroidBelt /> },
   { name: "Nebula", component: <Nebula /> },
   { name: "SouthPoleScene", component: <SouthPoleScene /> },
@@ -28,7 +30,17 @@ const componentsList = [
   { name: "Flash", component: <Flash /> },
   { name: "Jelly", component: <Jelly /> },
   { name: "Mouselight", component: <Mouselight><h1 className="w-[100vw]">Welcome to Sparkels_ui🚀</h1></Mouselight> },
-  { name: "Card3D", component: <Card3D image="https://via.placeholder.com/150" title="3D Card Title" subtitle="A 3D card component." buttonText="Click Me" onButtonClick={() => alert("Button clicked!")} /> },
+  {
+    name: "Card3D", component: (
+      <Card3D
+        image="https://c4.wallpaperflare.com/wallpaper/816/770/388/jordan-fly-wade-nike-wallpaper-preview.jpg"
+        title="Air Jordan 4 RM"
+        subtitle="men's Shoes\nMRP : ₹ 12 795.00"
+        buttonText="BUY IT NOW"
+        onButtonClick={() => alert("Button clicked!")}
+      />
+    )
+  },
   { name: "SparkSlide", component: <SlideShow slides={slides} /> },
   { name: "DualSlideShow", component: <DualSlideShow slides={slides} /> },
   { name: "LightInput", component: <SparksInput placeholder="Welcome to Sparkels_ui🚀" /> }
@@ -39,13 +51,27 @@ const Component = () => {
   const [selectedName, setSelectedName] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const usageCode = (name) => `import { ${name} } from "sparkels_ui";
+
+function App() {
+  return <${name} />;
+}
+
+export default App;`;
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    });
+  };
+
   return (
-    <div className="flex  max-w-[100vw] bg-black text-white">
+    <div className="flex max-w-[100vw] bg-black text-white z-10">
       <button className="absolute top-4 left-4 md:hidden p-2 bg-black rounded" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
         <Menu className="w-6 h-6 text-white" />
       </button>
 
-      <div className={`fixed inset-y-0 left-0 bg-gray-900 p-4 w-64 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:translate-x-0 md:w-1/4 border-r border-gray-700 transition-transform duration-300 ease-in-out`}>
+      <div className={`fixed inset-y-0 left-0 bg-black p-4 w-64 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:translate-x-0 md:w-1/4 border-r border-gray-600 transition-transform duration-300 ease-in-out`}>
         <h2 className="text-xl font-bold mb-4">Components</h2>
         <ul>
           {componentsList.map((item, index) => (
@@ -60,23 +86,35 @@ const Component = () => {
         </ul>
       </div>
 
-      <div className="  flex-1 flex flex-col justify-center items-center p-4 ">
-        {selectedComponent ? selectedComponent : <BlackholeVortex />}
+      <div className="flex-1 flex flex-col justify-center items-center p-4 w-[100vw]">
+        {selectedComponent ? selectedComponent : componentsList[0]?.component}
         {selectedComponent && (
-          <div className="mt-6 p-4 rounded-lg w-[90vw] flex flex-col justify-center mr-28 ">
+          <div className="mt-6 rounded-lg flex flex-col justify-start mr-[1000px] w-[30rem] ">
             <h3 className="text-lg font-semibold">How to Install & Use {selectedName}</h3>
+
             <p className="mt-2">To install <code>sparkels_ui</code>, use:</p>
-            <pre className="bg-black p-2 border-white border rounded text-green-400">npm install sparkels_ui</pre>
+            <div className="relative">
+              <pre className="bg-black p-2 border-white border rounded text-green-400">npm install sparkels_ui</pre>
+              <button
+                className="absolute top-1 right-1 text-sm text-white bg-gray-700 px-2 py-1 rounded hover:bg-gray-600 "
+                onClick={() => copyToClipboard("npm install sparkels_ui")}
+              >
+                Copy
+              </button>
+            </div>
+
             <p className="mt-2">Usage:</p>
-            <pre className="bg-black p-2 border-white border rounded text-green-400">
-              {`import { ${selectedName} } from "sparkels_ui";
-
-function App() {
-  return <${selectedName} />;
-}
-
-export default App;`}
-            </pre>
+            <div className="relative">
+              <pre className="bg-black p-2 border-white border rounded text-green-400 whitespace-pre-wrap">
+                {usageCode(selectedName)}
+              </pre>
+              <button
+                className="absolute top-1 right-1  text-sm text-white bg-gray-700 px-2 py-1 rounded hover:bg-gray-600"
+                onClick={() => copyToClipboard(usageCode(selectedName))}
+              >
+                Copy
+              </button>
+            </div>
           </div>
         )}
       </div>
