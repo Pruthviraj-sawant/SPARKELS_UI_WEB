@@ -1,5 +1,5 @@
 import { BlackholeVortex } from "sparkels_ui";
-
+import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center text-white">
@@ -14,9 +14,9 @@ const Home = () => {
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-4 ml-14">
-                    <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all">
+                <Link to="/components" ><button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all">
                         Browse Components
-                    </button>
+                    </button></Link>
                     <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all">
                         Custom Components
                     </button>
