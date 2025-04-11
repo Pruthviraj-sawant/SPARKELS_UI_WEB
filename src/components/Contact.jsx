@@ -29,8 +29,8 @@ const Contact = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center text-white overflow-hidden">
-      <Stars />
-
+      <div><Stars /></div>
+       <div className="w-[100vw]">hi</div>
       <div className="flex flex-row justify-center items-center text-white absolute sm:w-full flex-col mb-84 w-[300px]">
         <div className="text-2xl sm:text-3xl font-semibold tracking-wide mb-4">ascaius</div>
 

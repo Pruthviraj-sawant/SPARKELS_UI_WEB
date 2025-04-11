@@ -168,7 +168,9 @@ const componentsList = [
   },
   { name: "SparkSlide", component: <SlideShow slides={slides} /> },
   { name: "DualSlideShow", component: <DualSlideShow slides={slides} /> },
-  { name: "LightInput", component: <SparksInput placeholder="Welcome to Sparkels_ui🚀" /> }
+  { name: "LightInput", component: <SparksInput placeholder="Welcome to Sparkels_ui🚀" /> },
+  {name:"Fireeffect",component:<FireEffectInput placeholder="Welcome to Sparkels_ui🚀" /> },
+  {name:"Neoeffect",component:<NeoInput placeholder="Welcome to Sparkels_ui🚀" /> }
 ];
 
 const Component = () => {
